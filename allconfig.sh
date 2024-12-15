@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Étape 1 : Appliquer le premier plan
 tofu -chdir=cluster apply -auto-approve

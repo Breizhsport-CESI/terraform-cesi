@@ -4,8 +4,8 @@ provider "scaleway" {
 }
 
 resource "scaleway_vpc_private_network" "pn" {
-  name   = "my-private-network" # Remplacez par un nom significatif
-  region = "fr-par"            # Assurez-vous que cela correspond à votre région
+  name   = "my-private-network"
+  region = "fr-par"
 }
 
 resource "scaleway_k8s_cluster" "cluster" {
@@ -109,7 +109,7 @@ resource "helm_release" "nginx_ingress" {
 }
 
 resource "kubernetes_namespace" "cert_manager" {
-  depends_on = [null_resource.kubeconfig] # Ajoutez cette ligne
+  depends_on = [null_resource.kubeconfig]
   metadata {
     name = "cert-manager"
   }
