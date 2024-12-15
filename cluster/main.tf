@@ -152,5 +152,4 @@ output "kubeconfig" {
     token                  = scaleway_k8s_cluster.cluster.kubeconfig[0].token
     cluster_ca_certificate = scaleway_k8s_cluster.cluster.kubeconfig[0].cluster_ca_certificate
   }
-  sensitive = true # Masque les valeurs dans la sortie Terraform
 }
