@@ -1,22 +1,7 @@
-# terraform {
-#   required_providers {
-#     scaleway = {
-#       source = "scaleway/scaleway"
-#     }
-#   }
-#   required_version = ">= 0.13"
-# }
-
 provider "scaleway" {
-  project_id = "ace0a8c0-8b24-4ad3-a030-6bcae7502e93" # Remplacez par votre project_id réel
-  region     = "fr-par" # ou "nl-ams", selon votre région
+  project_id = "ace0a8c0-8b24-4ad3-a030-6bcae7502e93"
+  region     = "fr-par" # 
 }
-
-
-# variable "project_id" {
-#   type        = string
-#   description = "ace0a8c0-8b24-4ad3-a030-6bcae7502e93"
-# }
 
 resource "scaleway_vpc_private_network" "pn" {
   name   = "my-private-network" # Remplacez par un nom significatif
