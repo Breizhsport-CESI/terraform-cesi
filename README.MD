@@ -11,7 +11,7 @@ Installation de Tofu ou de Terraform
 Ensuite initialiser le projet
 
 ```bash
-tofu init -chdir=cluster && tofu -chdir=config
+cd cluster && tofu init && cd .. && cd config && tofu init && cd ..
 ```
 
 ## Lancement

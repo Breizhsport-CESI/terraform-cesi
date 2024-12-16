@@ -139,3 +139,28 @@ output "kubeconfig" {
   }
   sensitive = true
 }
+
+resource "local_file" "kubeconfig_yaml" {
+  depends_on = [null_resource.kubeconfig]
+  content = <<EOT
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: ${scaleway_k8s_cluster.cluster.kubeconfig[0].cluster_ca_certificate}
+    server: ${scaleway_k8s_cluster.cluster.kubeconfig[0].host}
+  name: scaleway-cluster
+contexts:
+- context:
+    cluster: scaleway-cluster
+    user: scaleway-user
+  name: scaleway-context
+current-context: scaleway-context
+kind: Config
+preferences: {}
+users:
+- name: scaleway-user
+  user:
+    token: ${scaleway_k8s_cluster.cluster.kubeconfig[0].token}
+EOT
+  filename = "kubeconfig.yaml"
+}
