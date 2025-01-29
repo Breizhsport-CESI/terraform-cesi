@@ -4,7 +4,7 @@ provider "scaleway" {
 }
 
 resource "scaleway_vpc_private_network" "pn" {
-  name   = "my-private-network"
+  name   = "poc-private-network"
   region = "nl-ams"
 }
 
