@@ -3,7 +3,7 @@ provider "scaleway" {
   region     = "nl-ams" # 
 }
 
-resource "scaleway_vpc_private_network" "pn" {
+resource "scaleway_vpc_private_network" "pnpoc" {
   name   = "poc-private-network"
   region = "nl-ams"
 }
@@ -13,7 +13,7 @@ resource "scaleway_k8s_cluster" "cluster" {
   type    = "kapsule"
   version = "1.31.2"
   cni     = "cilium"
-  private_network_id = scaleway_vpc_private_network.pn.id
+  private_network_id = scaleway_vpc_private_network.pnpoc.id
   delete_additional_resources = false
 }
 
@@ -26,6 +26,7 @@ resource "scaleway_k8s_pool" "pool" {
   max_size    = 1
   autoscaling = true
   autohealing = true
+  zone = "nl-ams-1"
 }
 
 resource "null_resource" "kubeconfig" {

@@ -4,6 +4,7 @@
 provider "registry.opentofu.org/hashicorp/helm" {
   version = "2.16.1"
   hashes = [
+    "h1:OAMufKLYnPEyJMNMaOFYQys3HdXtFdaT7kEaWmaINTI=",
     "h1:n8QIKeuMmAL4zHYv3SITKgYWuCA1HiJsr7y4fbepztQ=",
     "zh:1c820d7997377c80c320b3bb4f257258af6c499bf2f2082a87975854b156b82b",
     "zh:223dc3ba691a03eeb32d14160b3c6adc77d55a767274c728250cd4f1d4238a2a",
@@ -21,6 +22,7 @@ provider "registry.opentofu.org/hashicorp/helm" {
 provider "registry.opentofu.org/hashicorp/kubernetes" {
   version = "2.35.0"
   hashes = [
+    "h1:GwJjd7NekrqI9bD9KV9YDHt6EZj8IeWfWhmaUiBT5r0=",
     "h1:URyJU6n6VNPuCdzsET9oHWak7kXhfLLaEeqJoidnzyw=",
     "zh:069a9322f9045f1bed49f9d51a60790055f7209d32b96e0562e921e577de9caa",
     "zh:09510ff5cf0335838d7676fcb0b0d6a2dcbbb07301b51e2afe508412dfdee2aa",
@@ -38,6 +40,7 @@ provider "registry.opentofu.org/hashicorp/kubernetes" {
 provider "registry.opentofu.org/hashicorp/local" {
   version = "2.5.2"
   hashes = [
+    "h1:6lS+5A/4WFAqY3/RHWFRBSiFVLPRjvLaUgxPQvjXLHU=",
     "h1:k+9gXoahOyHbA/zkzl5kEFWJSeiREjczJjtPBtf7LKs=",
     "zh:25b95b76ceaa62b5c95f6de2fa6e6242edbf51e7fc6c057b7f7101aa4081f64f",
     "zh:3c974fdf6b42ca6f93309cf50951f345bfc5726ec6013b8832bcd3be0eb3429e",
@@ -55,6 +58,7 @@ provider "registry.opentofu.org/hashicorp/local" {
 provider "registry.opentofu.org/hashicorp/null" {
   version = "3.2.3"
   hashes = [
+    "h1:LF8arSzHfhbyQSFtTMTYEqCM34klzrbAQBJMHYCs9d8=",
     "h1:nNa5j1vTtxcpdC2i61O2tRkZjdkBNsxzYXYIx0VNsjc=",
     "zh:1d57d25084effd3fdfd902eca00020b34b1fb020253b84d7dd471301606015ac",
     "zh:65b7f9799b88464d9c2ec529713b7f52ea744275b61a8dc86cdedab1b2dcb933",
@@ -73,6 +77,7 @@ provider "registry.opentofu.org/hashicorp/scaleway" {
   version = "2.48.0"
   hashes = [
     "h1:5BbGEXuyORjQ9adWey72qJkOCj9zjwly/aUcwXXXqvo=",
+    "h1:ra/AlSZHIX8gBGtODsiaUp+V8iXpNIL1BZlxDLPc1Es=",
     "zh:161e4a2981240645b584acf13a76563ca90fff107efd983cbf7db74bfc3462b6",
     "zh:2cf0df5b147aa0fd50953e00bee8fea56e4ddb0630e7cbc7443619933c37522f",
     "zh:4cc775235b8b3d0847c4bf0d36c68ced5a1c26628c62abd1d53ccbdbc5c10ff8",
