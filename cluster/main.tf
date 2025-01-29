@@ -1,11 +1,11 @@
 provider "scaleway" {
   project_id = "ace0a8c0-8b24-4ad3-a030-6bcae7502e93"
-  region     = "fr-par" # 
+  region     = "nl-ams" # 
 }
 
 resource "scaleway_vpc_private_network" "pn" {
   name   = "my-private-network"
-  region = "fr-par"
+  region = "nl-ams"
 }
 
 resource "scaleway_k8s_cluster" "cluster" {
@@ -55,7 +55,7 @@ provider "kubernetes" {
 
 
 resource "scaleway_lb_ip" "nginx_ip" {
-  zone       = "fr-par-1"
+  zone       = "nl-ams-1"
   project_id = scaleway_k8s_cluster.cluster.project_id
 }
 
