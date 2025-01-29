@@ -9,7 +9,7 @@ resource "scaleway_vpc_private_network" "pn" {
 }
 
 resource "scaleway_k8s_cluster" "cluster" {
-  name    = "cesi-cluster"
+  name    = "cesi-poc-demo"
   type    = "kapsule"
   version = "1.31.2"
   cni     = "cilium"
@@ -19,7 +19,7 @@ resource "scaleway_k8s_cluster" "cluster" {
 
 resource "scaleway_k8s_pool" "pool" {
   cluster_id  = scaleway_k8s_cluster.cluster.id
-  name        = "cesi-pool"
+  name        = "cesi-pool-poc-demo"
   node_type   = "DEV1-M"
   size        = 1
   min_size    = 0
