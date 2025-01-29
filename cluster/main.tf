@@ -1,31 +1,32 @@
 provider "scaleway" {
   project_id = "ace0a8c0-8b24-4ad3-a030-6bcae7502e93"
-  region     = "fr-par" # 
+  region     = "nl-ams" # 
 }
 
-resource "scaleway_vpc_private_network" "pn" {
-  name   = "my-private-network"
-  region = "fr-par"
+resource "scaleway_vpc_private_network" "pnpoc" {
+  name   = "poc-private-network"
+  region = "nl-ams"
 }
 
 resource "scaleway_k8s_cluster" "cluster" {
-  name    = "cesi-cluster"
+  name    = "cesi-poc-demo"
   type    = "kapsule"
   version = "1.31.2"
   cni     = "cilium"
-  private_network_id = scaleway_vpc_private_network.pn.id
+  private_network_id = scaleway_vpc_private_network.pnpoc.id
   delete_additional_resources = false
 }
 
 resource "scaleway_k8s_pool" "pool" {
   cluster_id  = scaleway_k8s_cluster.cluster.id
-  name        = "cesi-pool"
+  name        = "cesi-pool-poc-demo"
   node_type   = "DEV1-M"
   size        = 1
   min_size    = 0
   max_size    = 1
   autoscaling = true
   autohealing = true
+  zone = "nl-ams-1"
 }
 
 resource "null_resource" "kubeconfig" {
@@ -55,7 +56,7 @@ provider "kubernetes" {
 
 
 resource "scaleway_lb_ip" "nginx_ip" {
-  zone       = "fr-par-1"
+  zone       = "nl-ams-1"
   project_id = scaleway_k8s_cluster.cluster.project_id
 }
 
